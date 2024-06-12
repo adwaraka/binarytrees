@@ -4,6 +4,8 @@ from binaryTree import (
     inorder,
     preorder,
     isIdentical,
+    isSymmetricTree,
+    minDepth,
 )
 
 def main():
@@ -24,6 +26,9 @@ def main():
     for val in dupArr[1:]:
         insert(dupRoot, Node(val))    
     print(isIdentical(root, dupRoot))
+    # TODO; better testing for symmetry
+    print(isSymmetricTree(root))
+    print(minDepth(root))
 
 
 if __name__ == "__main__":
