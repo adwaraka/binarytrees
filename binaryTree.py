@@ -76,3 +76,12 @@ def minDepth(root):
     left = minDepth(root.left) if root.left else float('inf')
     right = minDepth(root.right) if root.right else float('inf')
     return min(left, right) + 1
+
+
+def maxDepth(root):
+    if not root:
+        return 0
+
+    left_depth = maxDepth(root.left)
+    right_depth = maxDepth(root.right)
+    return max(left_depth, right_depth) + 1

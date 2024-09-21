@@ -6,6 +6,7 @@ from binaryTree import (
     isIdentical,
     isSymmetricTree,
     minDepth,
+    maxDepth,
 )
 
 def main():
@@ -29,6 +30,7 @@ def main():
     # TODO; better testing for symmetry
     print(isSymmetricTree(root))
     print(minDepth(root))
+    print(maxDepth(root))
 
 
 if __name__ == "__main__":
