@@ -67,15 +67,23 @@ def isSymmetric(x, y):
 
 
 def minDepth(root):
-    if not root:
+    # called on root = NULL
+    if root is None:
         return 0
-
-    if not root.left and not root.right:
+     
+    # Base Case : Leaf node.This accounts for height = 1
+    if root.left is None and root.right is None:
         return 1
-
-    left = minDepth(root.left) if root.left else float('inf')
-    right = minDepth(root.right) if root.right else float('inf')
-    return min(left, right) + 1
+     
+    # If left subtree is Null, recur for right subtree
+    if root.left is None:
+        return minDepth(root.right)+1
+     
+    # If right subtree is Null, recur for left subtree
+    if root.right is None:
+        return minDepth(root.left) +1
+     
+    return min(minDepth(root.left), minDepth(root.right))+1
 
 
 def maxDepth(root):
