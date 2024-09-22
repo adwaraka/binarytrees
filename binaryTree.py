@@ -89,7 +89,19 @@ def minDepth(root):
 def maxDepth(root):
     if not root:
         return 0
-
     left_depth = maxDepth(root.left)
     right_depth = maxDepth(root.right)
     return max(left_depth, right_depth) + 1
+
+
+def diameterOfBinaryTree(root):
+    def dfs(node, maxDiameter):
+        if node is None:
+            return 0
+        leftDepth = dfs(node.left, maxDiameter)
+        rightDepth = dfs(node.right, maxDiameter)
+        # is the new diameter greater than the old one?
+        maxDiameter = max(maxDiameter, leftDepth + rightDepth)
+        # return the diameter i.e left depth + right depth
+        return 1 + max(leftDepth, rightDepth)
+    return dfs(root, 0)

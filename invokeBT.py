@@ -7,6 +7,7 @@ from binaryTree import (
     isSymmetricTree,
     minDepth,
     maxDepth,
+    diameterOfBinaryTree,
 )
 
 def main():
@@ -31,6 +32,16 @@ def main():
     print(isSymmetricTree(root))
     print(minDepth(root))
     print(maxDepth(root))
+    print()
+    print("rootD")
+    rootD = Node(1)
+    rootD.left = Node(2)
+    rootD.right = Node(3)
+    rootD.left.left = Node(4)
+    rootD.left.right = Node(5)
+    rootD.left.left.left = Node(6)
+    # inorder(rootD)
+    print(f"Diameter: {diameterOfBinaryTree(rootD)}")
 
 
 if __name__ == "__main__":
