@@ -8,6 +8,7 @@ from binaryTree import (
     minDepth,
     maxDepth,
     diameterOfBinaryTree,
+    printRightSide,
 )
 
 def main():
@@ -40,8 +41,18 @@ def main():
     rootD.left.left = Node(4)
     rootD.left.right = Node(5)
     rootD.left.left.left = Node(6)
+    #
+    #            1
+    #          /   \
+    #        2       3
+    #       /  \
+    #     4     5
+    #    /
+    #  6
+    #
     # inorder(rootD)
     print(f"Diameter: {diameterOfBinaryTree(rootD)}")
+    printRightSide(rootD)
 
 
 if __name__ == "__main__":

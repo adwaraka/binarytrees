@@ -105,3 +105,22 @@ def diameterOfBinaryTree(root):
         # return the diameter i.e left depth + right depth
         return 1 + max(leftDepth, rightDepth)
     return dfs(root, 0)
+
+
+def printRightSide(root):
+    if root:
+        queue = [root]
+        while queue:
+            n = len(queue)
+            while n > 0:
+                n-=1
+                temp = queue.pop(0)
+                if n == 0:
+                    print(temp.data)
+                if temp.left:
+                    queue.append(temp.left)
+                if temp.right:
+                    queue.append(temp.right)
+    else:
+        print("None")
+ 
