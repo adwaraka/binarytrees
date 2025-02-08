@@ -114,12 +114,16 @@ def printRightSide(root):
             n = len(queue)
             while n > 0:
                 n-=1
+                # pick the first element from queue
                 temp = queue.pop(0)
                 if n == 0:
                     print(temp.data)
                 if temp.left:
+                    # if right does not exist, you still need to
+                    # # see the left and or it's children
                     queue.append(temp.left)
                 if temp.right:
+                    # the right node is added
                     queue.append(temp.right)
     else:
         print("None")
