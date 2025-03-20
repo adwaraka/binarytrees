@@ -128,3 +128,33 @@ def printRightSide(root):
     else:
         print("None")
  
+
+# reference: https://www.geeksforgeeks.org/flip-binary-tree/
+'''
+        2 <- root
+       / \
+      4   5
+    root.left.left = root.right
+
+        2
+       / \
+      4   5
+     /
+    5
+    root.left.right = root
+    4 points to 2
+
+        4
+       / \
+      5   2
+'''
+def flip(root):
+    if root is None:
+        return None
+    if root.left is None and root.right is None:
+        return None
+    flipped = flip(root.left)
+    root.left.left = root.right
+    root.left.right = root
+    root.left = root.right = None
+    return flipped
