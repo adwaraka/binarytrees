@@ -9,6 +9,8 @@ from binaryTree import (
     maxDepth,
     diameterOfBinaryTree,
     printRightSide,
+    flipBinaryTree,
+    printLevelOrder,
 )
 
 def main():
@@ -53,6 +55,17 @@ def main():
     # inorder(rootD)
     print(f"Diameter: {diameterOfBinaryTree(rootD)}")
     printRightSide(rootD)
+
+    print()
+    print("rootS")
+    rootS = Node(1)
+    rootS.left = Node(2)
+    rootS.right = Node(3)
+    rootS.right.left = Node(4)
+    rootS.right.right = Node(5)
+    print("Flipped")
+    rootS = flipBinaryTree(rootS)
+    printLevelOrder(rootS)
 
 
 if __name__ == "__main__":
