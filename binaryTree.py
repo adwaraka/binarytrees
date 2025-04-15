@@ -148,13 +148,31 @@ def printRightSide(root):
        / \
       5   2
 '''
-def flip(root):
+def flipBinaryTree(root):
     if root is None:
-        return None
+        return root  # it returns the original root
     if root.left is None and root.right is None:
-        return None
-    flipped = flip(root.left)
+        return root  # same as above
+    flippedRoot = flipBinaryTree(root.left)
     root.left.left = root.right
     root.left.right = root
     root.left = root.right = None
-    return flipped
+    return flippedRoot
+
+
+def printLevelOrder(root):
+    if root is None:
+        return None
+    queue = []
+    queue.append(root)
+    while queue:
+        nodeCount = len(queue)
+        while nodeCount > 0:
+            node = queue.pop(0)
+            print(node.data, end=" ")
+            if node.left is not None:
+                queue.append(node.left)
+            if node.right is not None:
+                queue.append(node.right)
+            nodeCount -= 1
+        print()
