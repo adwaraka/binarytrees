@@ -1,8 +1,10 @@
+from typing import Optional
+
 class Node():
     def __init__(self, data=None):
         self.data = data
-        self.left = None
-        self.right = None
+        self.left: Optional[Node] = None
+        self.right: Optional[Node] = None
 
 
 def insert(root, node):
