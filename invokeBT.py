@@ -11,6 +11,7 @@ from binaryTree import (
     printRightSide,
     flipBinaryTree,
     printLevelOrder,
+    countLeaves,
 )
 
 def main():
@@ -54,6 +55,7 @@ def main():
     #
     # inorder(rootD)
     print(f"Diameter: {diameterOfBinaryTree(rootD)}")
+    print(f"The number of leaf nodes: {countLeaves(rootD)}")
     printRightSide(rootD)
 
     print()

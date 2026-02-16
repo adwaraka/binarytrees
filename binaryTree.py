@@ -42,6 +42,16 @@ def preorder(root):
         preorder(root.right)
 
 
+# count number of leaves
+def countLeaves(root):
+    if root is None:
+        return 0
+    # leaves will have no children
+    elif root.left is None and root.right is None:
+        return 1
+    return countLeaves(root.left) + countLeaves(root.right)
+
+
 # check if BTs are identical
 def isIdentical(x, y):
     # x and y nodes do not exist
