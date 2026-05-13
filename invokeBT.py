@@ -12,6 +12,7 @@ from binaryTree import (
     flipBinaryTree,
     printLevelOrder,
     countLeaves,
+    invertBinaryTree,
 )
 
 def main():
@@ -68,6 +69,20 @@ def main():
     print("Flipped")
     rootS = flipBinaryTree(rootS)
     printLevelOrder(rootS)
+
+    print()
+    print("rootI")
+    rootI = Node(1)
+    rootI.left = Node(2)
+    rootI.right = Node(3)
+    rootI.right.left = Node(4)
+    rootI.right.right = Node(5)
+    print(rootI.left.data)
+    print(rootI.right.data)
+    print("Inverted BT")
+    invertBinaryTree(rootI)
+    print(rootI.left.data)
+    print(rootI.right.data)
 
 
 if __name__ == "__main__":

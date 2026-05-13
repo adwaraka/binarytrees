@@ -188,3 +188,12 @@ def printLevelOrder(root):
                 queue.append(node.right)
             nodeCount -= 1
         print()
+
+
+def invertBinaryTree(root):
+    if root is None:
+        return None
+    root.left, root.right = root.right, root.left
+    invertBinaryTree(root.left)
+    invertBinaryTree(root.right)
+    return root
