@@ -193,7 +193,7 @@ def printLevelOrder(root):
 def invertBinaryTree(root):
     if root is None:
         return None
-    root.left, root.right = root.right, root.leftDepth
+    root.left, root.right = root.right, root.left
     invertBinaryTree(root.left)
     invertBinaryTree(root.right)
     return root
